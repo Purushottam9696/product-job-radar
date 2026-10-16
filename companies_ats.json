@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Stripe",
+    "domain": "FinTech & Digital Payments",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "stripe",
+    "rating": 4.2
+  },
+  {
+    "name": "Figma",
+    "domain": "Enterprise SaaS & Productivity",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "figma",
+    "rating": 4.4
+  },
+  {
+    "name": "Databricks",
+    "domain": "Developer Tools & DevOps",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "databricks",
+    "rating": 4.4
+  },
+  {
+    "name": "Airbnb",
+    "domain": "Consumer Internet & E-Commerce",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "airbnb",
+    "rating": 4.2
+  },
+  {
+    "name": "DoorDash",
+    "domain": "Consumer Internet & E-Commerce",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "doordash",
+    "rating": 4.1
+  },
+  {
+    "name": "Cloudflare",
+    "domain": "AI, Systems & Infrastructure",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "cloudflare",
+    "rating": 4.3
+  },
+  {
+    "name": "GitHub",
+    "domain": "Developer Tools & DevOps",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "github",
+    "rating": 4.5
+  },
+  {
+    "name": "Dropbox",
+    "domain": "Enterprise SaaS & Productivity",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "dropbox",
+    "rating": 4.3
+  },
+  {
+    "name": "GitLab",
+    "domain": "Developer Tools & DevOps",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "gitlab",
+    "rating": 4.4
+  },
+  {
+    "name": "Docker",
+    "domain": "Developer Tools & DevOps",
+    "origin": "Global Titan",
+    "ats": "greenhouse",
+    "token": "docker",
+    "rating": 4.3
+  },
+  {
+    "name": "Postman",
+    "domain": "Developer Tools & DevOps",
+    "origin": "India-Founded",
+    "ats": "lever",
+    "token": "postman",
+    "rating": 4.3
+  },
+  {
+    "name": "Netflix",
+    "domain": "Consumer Internet & E-Commerce",
+    "origin": "Global Titan",
+    "ats": "lever",
+    "token": "netflix",
+    "rating": 4.2
+  },
+  {
+    "name": "Spotify",
+    "domain": "Consumer Internet & E-Commerce",
+    "origin": "Global Titan",
+    "ats": "lever",
+    "token": "spotify",
+    "rating": 4.2
+  },
+  {
+    "name": "Atlassian",
+    "domain": "Developer Tools & DevOps",
+    "origin": "Global Titan",
+    "ats": "lever",
+    "token": "atlassian",
+    "rating": 4.5
+  },
+  {
+    "name": "Hasura",
+    "domain": "Developer Tools & DevOps",
+    "origin": "India-Founded",
+    "ats": "lever",
+    "token": "hasura",
+    "rating": 4.4
+  },
+  {
+    "name": "BrowserStack",
+    "domain": "Developer Tools & DevOps",
+    "origin": "India-Founded",
+    "ats": "greenhouse",
+    "token": "browserstack",
+    "rating": 4.1
+  },
+  {
+    "name": "Chargebee",
+    "domain": "Enterprise SaaS & Productivity",
+    "origin": "India-Founded",
+    "ats": "lever",
+    "token": "chargebee",
+    "rating": 4.1
+  },
+  {
+    "name": "Razorpay",
+    "domain": "FinTech & Digital Payments",
+    "origin": "India-Founded",
+    "ats": "greenhouse",
+    "token": "razorpay",
+    "rating": 4.2
+  },
+  {
+    "name": "Freshworks",
+    "domain": "Enterprise SaaS & Productivity",
+    "origin": "India-Founded",
+    "ats": "smartrecruiters",
+    "token": "Freshworks",
+    "rating": 4.0
+  },
+  {
+    "name": "Zoho Corporation",
+    "domain": "Enterprise SaaS & Productivity",
+    "origin": "India-Founded",
+    "ats": "custom_api",
+    "token": "zoho",
+    "rating": 4.3
+  },
+  {
+    "name": "Zerodha",
+    "domain": "FinTech & Digital Payments",
+    "origin": "India-Founded",
+    "ats": "custom_api",
+    "token": "zerodha",
+    "rating": 4.4
+  },
+  {
+    "name": "Swiggy",
+    "domain": "Consumer Internet & E-Commerce",
+    "origin": "India-Founded",
+    "ats": "greenhouse",
+    "token": "swiggy",
+    "rating": 4.1
+  },
+  {
+    "name": "CRED",
+    "domain": "FinTech & Digital Payments",
+    "origin": "India-Founded",
+    "ats": "lever",
+    "token": "cred",
+    "rating": 4.1
+  },
+  {
+    "name": "Groww",
+    "domain": "FinTech & Digital Payments",
+    "origin": "India-Founded",
+    "ats": "lever",
+    "token": "groww",
+    "rating": 4.1
+  },
+  {
+    "name": "Urban Company",
+    "domain": "Consumer Internet & E-Commerce",
+    "origin": "India-Founded",
+    "ats": "greenhouse",
+    "token": "urbancompany",
+    "rating": 4.0
+  },
+  {
+    "name": "Google",
+    "domain": "Big Tech & Cloud Platforms",
+    "origin": "Global Titan",
+    "ats": "custom_api",
+    "token": "google",
+    "rating": 4.4
+  },
+  {
+    "name": "Microsoft",
+    "domain": "Big Tech & Cloud Platforms",
+    "origin": "Global Titan",
+    "ats": "custom_api",
+    "token": "microsoft",
+    "rating": 4.3
+  },
+  {
+    "name": "Nvidia",
+    "domain": "AI, Systems & Infrastructure",
+    "origin": "Global Titan",
+    "ats": "workday",
+    "token": "nvidia",
+    "rating": 4.6
+  },
+  {
+    "name": "Adobe",
+    "domain": "Enterprise SaaS & Productivity",
+    "origin": "Global Titan",
+    "ats": "workday",
+    "token": "adobe",
+    "rating": 4.4
+  },
+  {
+    "name": "Amazon",
+    "domain": "Big Tech & Cloud Platforms",
+    "origin": "Global Titan",
+    "ats": "custom_api",
+    "token": "amazon",
+    "rating": 4.1
+  }
+]

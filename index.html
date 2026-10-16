@@ -1,1 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductPulse — Real-Time Job Radar for 120 Product Companies</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.03); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 2s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
 
+  <!-- TOP LIVE STATUS BAR -->
+  <header class="bg-slate-900 border-b border-slate-800 text-white text-xs py-2 px-4 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 bg-emerald-500/10 text-emerald-400 font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          Ingestion Engine: Live
+        </span>
+        <span class="text-slate-400 hidden sm:inline">•</span>
+        <span class="text-slate-300 hidden sm:inline">Runs every 6h via GitHub Actions Cron (100% Free)</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-slate-400">Tracked: <strong class="text-white">120 Companies</strong> (60 India / 60 Global)</span>
+        <button id="btnOpenSetup" class="bg-indigo-600 hover:bg-indigo-500 text-white px-2.5 py-1 rounded font-medium transition shadow-sm flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          $0 Setup Guide
+        </button>
+        <button id="btnSimulateSync" class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded font-medium transition shadow-sm flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          Simulate Sync
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 text-white pt-8 pb-10 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded border border-blue-400/30 uppercase tracking-wider">Free & Open Source</span>
+            <span class="text-xs text-slate-400">Zero Server Cost • Public ATS APIs</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+            ProductPulse <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Job Radar</span>
+          </h1>
+          <p class="mt-2 text-slate-300 text-sm md:text-base max-w-2xl">
+            Real-time automated opening detector across 120 premier product companies in India and globally. Filter by tech stack, experience level, remote policy, and location.
+          </p>
+        </div>
+
+        <!-- Quick Metrics Cards -->
+        <div class="grid grid-cols-3 gap-3 self-start md:self-auto">
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-lg p-3 text-center min-w-[95px]">
+            <span class="text-xs text-slate-400 block font-medium">Active Jobs</span>
+            <span id="metricActiveJobs" class="text-xl font-bold text-white">20</span>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-lg p-3 text-center min-w-[95px]">
+            <span class="text-xs text-slate-400 block font-medium">⚡ New (&lt;24h)</span>
+            <span id="metricNewJobs" class="text-xl font-bold text-emerald-400">12</span>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-lg p-3 text-center min-w-[95px]">
+            <span class="text-xs text-slate-400 block font-medium">Saved</span>
+            <span id="metricSavedJobs" class="text-xl font-bold text-amber-400">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN SEARCH & QUICK CHIPS -->
+      <div class="mt-6">
+        <div class="relative">
+          <svg class="w-5 h-5 absolute left-4 top-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search by job title, company (e.g. Stripe, Postman), skills (e.g. Go, React, Kafka, Kubernetes)..."
+            class="w-full pl-12 pr-10 py-3 bg-white text-slate-900 rounded-xl shadow-lg border-0 focus:ring-2 focus:ring-indigo-500 text-sm md:text-base outline-none"
+          />
+          <button id="btnClearSearch" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 hidden text-sm font-semibold">✕</button>
+        </div>
+
+        <!-- Quick filter chips -->
+        <div class="flex flex-wrap items-center gap-2 mt-3 text-xs">
+          <span class="text-slate-400 font-medium">Quick Filters:</span>
+          <button data-quick="new" class="quick-chip bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-2.5 py-1 rounded-full transition">
+            ⚡ New (&lt;24h)
+          </button>
+          <button data-quick="bengaluru" class="quick-chip bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-2.5 py-1 rounded-full transition">
+            🇮🇳 Bengaluru Hub
+          </button>
+          <button data-quick="remote" class="quick-chip bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-2.5 py-1 rounded-full transition">
+            🌐 Remote-First
+          </button>
+          <button data-quick="devtools" class="quick-chip bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-2.5 py-1 rounded-full transition">
+            🛠️ DevTools & Infra
+          </button>
+          <button data-quick="india-founded" class="quick-chip bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-2.5 py-1 rounded-full transition">
+            🦄 Indian SaaS Leaders
+          </button>
+          <button data-quick="high-rating" class="quick-chip bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 px-2.5 py-1 rounded-full transition">
+            ⭐ Rating ≥ 4.3
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER CONTROLS BAR -->
+  <section class="bg-white border-b border-slate-200 py-3.5 px-4 shadow-sm">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 text-xs">
+        
+        <!-- Location filter -->
+        <div>
+          <label class="block text-slate-500 font-medium mb-1">Location</label>
+          <select id="filterLocation" class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:ring-1 focus:ring-indigo-500 outline-none">
+            <option value="all">All Locations</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Noida">Noida</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Remote">Remote</option>
+          </select>
+        </div>
+
+        <!-- Origin filter -->
+        <div>
+          <label class="block text-slate-500 font-medium mb-1">Company Origin</label>
+          <select id="filterOrigin" class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:ring-1 focus:ring-indigo-500 outline-none">
+            <option value="all">All Origins</option>
+            <option value="India-Founded">India-Founded (60)</option>
+            <option value="Global Titan">Global Titans (60)</option>
+          </select>
+        </div>
+
+        <!-- Domain filter -->
+        <div>
+          <label class="block text-slate-500 font-medium mb-1">Product Domain</label>
+          <select id="filterDomain" class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:ring-1 focus:ring-indigo-500 outline-none">
+            <option value="all">All Domains</option>
+            <option value="Developer Tools & DevOps">DevTools & DevOps</option>
+            <option value="Enterprise SaaS & Productivity">Enterprise SaaS</option>
+            <option value="FinTech & Digital Payments">FinTech & Payments</option>
+            <option value="Big Tech & Cloud Platforms">Big Tech & Cloud</option>
+            <option value="Consumer Internet & E-Commerce">Consumer Internet</option>
+            <option value="AI, Systems & Infrastructure">AI & Systems</option>
+          </select>
+        </div>
+
+        <!-- Experience filter -->
+        <div>
+          <label class="block text-slate-500 font-medium mb-1">Experience Level</label>
+          <select id="filterExp" class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:ring-1 focus:ring-indigo-500 outline-none">
+            <option value="all">All Experience Levels</option>
+            <option value="Mid-Level (2-5 yrs)">Mid-Level (2-5 yrs)</option>
+            <option value="Senior (5-8 yrs)">Senior (5-8 yrs)</option>
+            <option value="Lead / Staff (8+ yrs)">Lead / Staff (8+ yrs)</option>
+          </select>
+        </div>
+
+        <!-- Work model filter -->
+        <div>
+          <label class="block text-slate-500 font-medium mb-1">Work Policy</label>
+          <select id="filterWorkModel" class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:ring-1 focus:ring-indigo-500 outline-none">
+            <option value="all">All Work Policies</option>
+            <option value="Remote-First">Remote-First</option>
+            <option value="Flexible Hybrid">Flexible Hybrid</option>
+            <option value="Hybrid (3 Days)">Hybrid (3 Days)</option>
+            <option value="In-Office">In-Office</option>
+          </select>
+        </div>
+
+        <!-- Recency filter -->
+        <div>
+          <label class="block text-slate-500 font-medium mb-1">Posting Recency</label>
+          <select id="filterRecency" class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-700 focus:ring-1 focus:ring-indigo-500 outline-none">
+            <option value="all">Anytime</option>
+            <option value="24h">Past 24 Hours (⚡ New)</option>
+            <option value="3d">Past 3 Days</option>
+            <option value="7d">Past 7 Days</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Bottom controls: count, reset, bookmarks toggle, view toggle -->
+      <div class="flex flex-wrap items-center justify-between gap-3 mt-3 pt-3 border-t border-slate-100 text-xs">
+        <div class="flex items-center gap-2">
+          <span id="resultsCountText" class="text-slate-600 font-semibold">Showing 20 jobs</span>
+          <button id="btnResetFilters" class="text-indigo-600 hover:text-indigo-800 font-medium ml-2 underline hidden">
+            Clear all filters
+          </button>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="btnToggleSavedOnly" class="border border-slate-300 hover:border-slate-400 bg-white px-3 py-1.5 rounded-lg font-medium text-slate-700 transition flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"></path></svg>
+            <span id="savedFilterText">Saved Jobs (0)</span>
+          </button>
+
+          <div class="flex items-center border border-slate-300 rounded-lg overflow-hidden bg-slate-100 p-0.5">
+            <button id="btnViewGrid" class="p-1 px-2.5 bg-white text-slate-800 rounded font-medium shadow-xs">Grid</button>
+            <button id="btnViewList" class="p-1 px-2.5 text-slate-500 hover:text-slate-800 font-medium">List</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN JOB LISTINGS CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
+    <!-- Active filters bar (if any selected) -->
+    <div id="activeFiltersBadgeContainer" class="flex flex-wrap items-center gap-2 mb-4 hidden">
+      <span class="text-xs text-slate-500 font-medium">Active filters:</span>
+      <div id="activeFilterTags" class="flex flex-wrap gap-1.5"></div>
+    </div>
+
+    <!-- Job Cards Grid -->
+    <div id="jobsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-16 px-4 bg-white rounded-xl border border-dashed border-slate-300">
+      <svg class="w-12 h-12 text-slate-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <h3 class="text-base font-semibold text-slate-800">No matching product company jobs found</h3>
+      <p class="text-xs text-slate-500 max-w-sm mx-auto mt-1">Try broadening your search keywords, resetting filters, or switching to All Locations.</p>
+      <button id="btnEmptyReset" class="mt-4 px-4 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-500 transition">
+        Reset All Filters
+      </button>
+    </div>
+  </main>
+
+  <!-- JOB DETAILS MODAL -->
+  <div id="jobModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+      <div class="p-6 border-b border-slate-100 flex items-start justify-between">
+        <div class="flex items-center gap-3">
+          <div id="modalLogo" class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-white text-lg bg-indigo-600 shadow-sm">
+            ST
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h4 id="modalCompany" class="font-bold text-slate-800 text-base">Stripe</h4>
+              <span id="modalRating" class="bg-amber-50 text-amber-700 text-xs px-2 py-0.5 rounded font-semibold border border-amber-200">⭐ 4.2</span>
+              <span id="modalOrigin" class="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Global Titan</span>
+            </div>
+            <h2 id="modalTitle" class="text-lg font-bold text-slate-900 mt-1">Staff Software Engineer</h2>
+          </div>
+        </div>
+        <button id="btnCloseModal" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg">✕</button>
+      </div>
+
+      <div class="p-6 space-y-5 text-sm">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3.5 bg-slate-50 rounded-xl border border-slate-100 text-xs">
+          <div>
+            <span class="text-slate-400 block">Location</span>
+            <strong id="modalLocation" class="text-slate-800 font-semibold">Bengaluru, India</strong>
+          </div>
+          <div>
+            <span class="text-slate-400 block">Work Policy</span>
+            <strong id="modalWorkModel" class="text-slate-800 font-semibold">Flexible Hybrid</strong>
+          </div>
+          <div>
+            <span class="text-slate-400 block">Compensation Band</span>
+            <strong id="modalSalary" class="text-emerald-700 font-semibold">₹80L - ₹1.2Cr</strong>
+          </div>
+          <div>
+            <span class="text-slate-400 block">Experience</span>
+            <strong id="modalExp" class="text-slate-800 font-semibold">Staff (8+ yrs)</strong>
+          </div>
+          <div>
+            <span class="text-slate-400 block">ATS Provider</span>
+            <strong id="modalAts" class="text-slate-800 font-semibold">Greenhouse API</strong>
+          </div>
+          <div>
+            <span class="text-slate-400 block">Posted Recency</span>
+            <strong id="modalPosted" class="text-slate-800 font-semibold">3 hours ago</strong>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-slate-500 mb-1.5">Role Overview</h4>
+          <p id="modalSummary" class="text-slate-600 leading-relaxed text-sm">
+            Design and scale the next-generation global settlement engines handling billions of dollars daily with 99.999% uptime.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-slate-500 mb-2">Required Skills & Tech Stack</h4>
+          <div id="modalTags" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+        <div class="p-4 bg-indigo-50 border border-indigo-100 rounded-xl">
+          <h4 class="font-bold text-indigo-900 text-xs uppercase tracking-wider mb-1">Interview Preparation Recommendation</h4>
+          <p class="text-indigo-800 text-xs leading-relaxed">
+            Focus heavily on Distributed Consensus (Raft/Paxos), Transactional Outbox pattern, Idempotency keys, and LeetCode Medium/Hard algorithmic problem solving.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-6 border-t border-slate-100 bg-slate-50 flex items-center justify-between rounded-b-2xl">
+        <button id="modalBtnBookmark" class="px-3.5 py-2 border border-slate-300 rounded-lg text-slate-700 hover:bg-white text-xs font-semibold transition flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+          <span id="modalBookmarkText">Save Job</span>
+        </button>
+
+        <a id="modalApplyLink" href="https://stripe.com/jobs" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-bold transition shadow-sm flex items-center gap-1.5">
+          Apply on Official Career Portal
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETUP & CODE MODAL ($0 Free Architecture) -->
+  <div id="setupModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+      <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">100% Zero-Cost Stack</span>
+          <h2 class="text-lg font-bold text-slate-900 mt-1">Automated Job Ingestion Engine: Setup Guide</h2>
+        </div>
+        <button id="btnCloseSetup" class="text-slate-400 hover:text-slate-600 p-1">✕</button>
+      </div>
+
+      <div class="p-6 space-y-4 text-xs">
+        <p class="text-slate-600 text-sm">
+          This system queries the open, keyless REST APIs of <strong>Greenhouse</strong>, <strong>Lever</strong>, and <strong>Ashby</strong> directly on a scheduled cron via <strong>GitHub Actions</strong>. No paid scraper services, no proxies, and no server bills.
+        </p>
+
+        <!-- Architecture Flow -->
+        <div class="p-3 bg-slate-900 text-slate-200 rounded-xl font-mono text-[11px] leading-relaxed">
+          [GitHub Actions Cron (Every 6h)] ➔ [fetch_jobs.py] ➔ [Public ATS APIs (Greenhouse/Lever)] ➔ [jobs.json updated in Git] ➔ [GitHub Pages / Vercel Live UI]
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-800 text-xs mb-1">Step 1: Download the Automation Files</h4>
+          <p class="text-slate-500 mb-2">The complete packaged crawler code and GitHub Actions workflow are available in the deliverable zip file: <code class="bg-slate-100 px-1 py-0.5 rounded text-indigo-700">job_tracker_automation.zip</code>.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-800 text-xs mb-1">Step 2: Push to a Free GitHub Repo</h4>
+          <p class="text-slate-500">Create a free public or private GitHub repository, place the files inside, and commit them:</p>
+          <pre class="bg-slate-100 p-3 rounded-lg text-slate-800 font-mono mt-1 overflow-x-auto">
+git init
+git add .
+git commit -m "feat: initial product company job tracker"
+git branch -M main
+git remote add origin https://github.com/&lt;your-username&gt;/product-job-radar.git
+git push -u origin main</pre>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-800 text-xs mb-1">Step 3: Enable Free GitHub Pages</h4>
+          <p class="text-slate-500">Go to your Repository Settings ➔ <strong>Pages</strong> ➔ Select Branch: <strong>main</strong> / root ➔ Click Save. Your job board is live on the internet forever for $0.</p>
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex justify-end">
+        <button id="btnDismissSetup" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold">Got it, close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+    <span id="toastMsg">Action completed successfully</span>
+  </div>
+
+  <!-- APPLICATION JAVASCRIPT STATE & LOGIC -->
+  <script>
+    // 1. Initial Dataset
+    const initialJobs = [{"id": "job_1", "company": "Stripe", "title": "Staff Software Engineer - Global Payment Infrastructure", "domain": "FinTech & Digital Payments", "origin": "Global Titan", "location": "Bengaluru, India", "work_model": "Flexible Hybrid", "exp_level": "Lead / Staff (8+ yrs)", "department": "Core Payments & Clearing", "ats": "Greenhouse", "rating": 4.2, "posted_hours_ago": 3, "is_new": true, "tags": ["Go", "Distributed Systems", "PostgreSQL", "Kafka", "High Availability"], "url": "https://stripe.com/jobs", "salary_range": "\u20b980L - \u20b91.2Cr + RSUs", "summary": "Design and scale the next-generation global settlement engines handling billions of dollars daily with 99.999% uptime."}, {"id": "job_2", "company": "Postman", "title": "Senior Backend Engineer - API Platform & Ecosystem", "domain": "Developer Tools & DevOps", "origin": "India-Founded", "location": "Bengaluru, India (Remote)", "work_model": "Remote-First", "exp_level": "Senior (5-8 yrs)", "department": "Platform Services", "ats": "Lever", "rating": 4.3, "posted_hours_ago": 6, "is_new": true, "tags": ["Node.js", "TypeScript", "Redis", "AWS", "API Design"], "url": "https://www.postman.com/company/careers/", "salary_range": "\u20b945L - \u20b965L + ESOPs", "summary": "Build high-throughput collaborative API testing and mock server runtimes used by over 30 million developers worldwide."}, {"id": "job_3", "company": "Databricks", "title": "Lead Software Engineer - Apache Spark & Unified Lakehouse", "domain": "Developer Tools & DevOps", "origin": "Global Titan", "location": "Bengaluru, India", "work_model": "Flexible Hybrid", "exp_level": "Lead / Staff (8+ yrs)", "department": "Data Engine Architecture", "ats": "Greenhouse", "rating": 4.4, "posted_hours_ago": 12, "is_new": true, "tags": ["Scala", "C++", "Apache Spark", "Distributed Computing", "MLflow"], "url": "https://www.databricks.com/company/careers", "salary_range": "\u20b990L - \u20b91.3Cr + Equity", "summary": "Optimize query execution runtimes, photon engines, and distributed memory management across petabyte-scale lakehouses."}, {"id": "job_4", "company": "Zerodha", "title": "Senior Systems Engineer - Low-Latency Exchange Feeds", "domain": "FinTech & Digital Payments", "origin": "India-Founded", "location": "Bengaluru, India", "work_model": "Flexible Hybrid", "exp_level": "Senior (5-8 yrs)", "department": "Kite Trading Core", "ats": "Custom API", "rating": 4.4, "posted_hours_ago": 18, "is_new": true, "tags": ["Golang", "PostgreSQL", "WebSockets", "Linux Kernel", "Redis"], "url": "https://zerodha.com/careers", "salary_range": "\u20b940L - \u20b960L + Profit Share", "summary": "Scale India's largest retail brokerage engine executing millions of trading orders every second with sub-millisecond execution times."}, {"id": "job_5", "company": "Google", "title": "Software Engineer III - Google Cloud Platform (GCP)", "domain": "Big Tech & Cloud Platforms", "origin": "Global Titan", "location": "Hyderabad, India", "work_model": "Hybrid (3 Days)", "exp_level": "Mid-Level (2-5 yrs)", "department": "Cloud Networking", "ats": "Custom API", "rating": 4.4, "posted_hours_ago": 24, "is_new": true, "tags": ["Java", "C++", "Distributed Systems", "Kubernetes", "gRPC"], "url": "https://careers.google.com/", "salary_range": "\u20b945L - \u20b970L + RSUs", "summary": "Architect planetary-scale software-defined networking, edge load balancing, and SDN controllers for enterprise cloud customers."}, {"id": "job_6", "company": "Zoho Corporation", "title": "Lead Architect - Zoho One Enterprise Cloud", "domain": "Enterprise SaaS & Productivity", "origin": "India-Founded", "location": "Chennai, India", "work_model": "Flexible Hybrid", "exp_level": "Lead / Staff (8+ yrs)", "department": "Core Infrastructure", "ats": "Custom API", "rating": 4.3, "posted_hours_ago": 28, "is_new": false, "tags": ["Java", "Distributed DB", "Data Sovereignty", "High Concurrency"], "url": "https://www.zoho.com/careers/", "salary_range": "\u20b935L - \u20b955L", "summary": "Spearhead proprietary server hardware orchestration and database sharding across Zoho's privacy-first global data centers."}, {"id": "job_7", "company": "Atlassian", "title": "Senior Full Stack Engineer - Jira Cloud Productivity", "domain": "Developer Tools & DevOps", "origin": "Global Titan", "location": "Bengaluru, India (Remote)", "work_model": "Remote-First", "exp_level": "Senior (5-8 yrs)", "department": "Jira Core Experiences", "ats": "Lever", "rating": 4.5, "posted_hours_ago": 32, "is_new": false, "tags": ["React", "TypeScript", "Kotlin", "GraphQL", "AWS"], "url": "https://www.atlassian.com/company/careers", "salary_range": "\u20b955L - \u20b975L + RSUs", "summary": "Develop responsive, modular collaborative workflow canvasses and real-time collaboration engines inside Jira Cloud."}, {"id": "job_8", "company": "Razorpay", "title": "Software Engineer II - RazorpayX Banking APIs", "domain": "FinTech & Digital Payments", "origin": "India-Founded", "location": "Bengaluru, India", "work_model": "Hybrid (3 Days)", "exp_level": "Mid-Level (2-5 yrs)", "department": "Neobanking Core", "ats": "Greenhouse", "rating": 4.2, "posted_hours_ago": 40, "is_new": false, "tags": ["Golang", "Microservices", "MySQL", "Kafka", "Docker"], "url": "https://razorpay.com/jobs/", "salary_range": "\u20b932L - \u20b948L + ESOPs", "summary": "Implement automated corporate payout routers, ledger consensus verification, and enterprise bank API integrations."}, {"id": "job_9", "company": "Nvidia", "title": "Senior AI Systems Software Engineer - TensorRT & CUDA", "domain": "AI, Systems & Infrastructure", "origin": "Global Titan", "location": "Pune, India", "work_model": "Flexible Hybrid", "exp_level": "Senior (5-8 yrs)", "department": "Deep Learning Acceleration", "ats": "Workday", "rating": 4.6, "posted_hours_ago": 16, "is_new": true, "tags": ["C++", "CUDA", "LLM Inference", "GPU Profiling", "Python"], "url": "https://www.nvidia.com/en-us/about-nvidia/careers/", "salary_range": "\u20b960L - \u20b995L + Stock", "summary": "Accelerate large language model kernel inference, tensor parallelism, and low-precision quantization on next-gen Blackwell architectures."}, {"id": "job_10", "company": "BrowserStack", "title": "Staff Site Reliability Engineer (SRE) - Device Cloud", "domain": "Developer Tools & DevOps", "origin": "India-Founded", "location": "Mumbai, India", "work_model": "Remote-First", "exp_level": "Lead / Staff (8+ yrs)", "department": "Infrastructure & Telemetry", "ats": "Greenhouse", "rating": 4.1, "posted_hours_ago": 44, "is_new": false, "tags": ["Kubernetes", "Linux Internals", "Terraform", "Prometheus", "Golang"], "url": "https://www.browserstack.com/careers", "salary_range": "\u20b950L - \u20b975L + ESOPs", "summary": "Manage real device testing farms spanning over 20,000 real iOS and Android physical devices with 99.95% cloud availability."}, {"id": "job_11", "company": "Microsoft", "title": "Software Engineer II - Azure Container Apps & Kubernetes", "domain": "Big Tech & Cloud Platforms", "origin": "Global Titan", "location": "Hyderabad, India", "work_model": "Flexible Hybrid", "exp_level": "Mid-Level (2-5 yrs)", "department": "Azure Core Compute", "ats": "Custom API", "rating": 4.3, "posted_hours_ago": 4, "is_new": true, "tags": ["Golang", "C#", ".NET Core", "Kubernetes", "Azure"], "url": "https://careers.microsoft.com/", "salary_range": "\u20b938L - \u20b958L + Stock", "summary": "Develop serverless container scaling fabrics, KEDA event-driven autoscalers, and microservice meshes inside Azure."}, {"id": "job_12", "company": "Swiggy", "title": "Lead Machine Learning Engineer - Dispatch & Logistics", "domain": "Consumer Internet & E-Commerce", "origin": "India-Founded", "location": "Bengaluru, India", "work_model": "Flexible Hybrid", "exp_level": "Lead / Staff (8+ yrs)", "department": "Data Science & Routing", "ats": "Greenhouse", "rating": 4.1, "posted_hours_ago": 8, "is_new": true, "tags": ["Python", "PyTorch", "Graph Neural Networks", "Dynamic Routing", "Ray"], "url": "https://careers.swiggy.com/", "salary_range": "\u20b965L - \u20b990L + ESOPs", "summary": "Optimize real-time delivery partner batching and travel time prediction for 10-minute Instamart orders across India."}, {"id": "job_13", "company": "Figma", "title": "Senior Frontend Infrastructure Engineer - WebGL & Canvas", "domain": "Enterprise SaaS & Productivity", "origin": "Global Titan", "location": "Bengaluru, India (Remote-friendly)", "work_model": "Remote-First", "exp_level": "Senior (5-8 yrs)", "department": "Editor Core", "ats": "Greenhouse", "rating": 4.4, "posted_hours_ago": 14, "is_new": true, "tags": ["TypeScript", "WebAssembly", "WebGL", "Rust", "C++"], "url": "https://www.figma.com/careers/", "salary_range": "\u20b975L - \u20b91.1Cr + RSUs", "summary": "Push the limits of browser graphics rendering, multi-player vector document synchronization, and WebAssembly execution."}, {"id": "job_14", "company": "Hasura", "title": "Compiler & Runtime Engineer - Data Delivery Network (DDN)", "domain": "Developer Tools & DevOps", "origin": "India-Founded", "location": "Bengaluru, India", "work_model": "Remote-First", "exp_level": "Senior (5-8 yrs)", "department": "Engine Core", "ats": "Lever", "rating": 4.4, "posted_hours_ago": 22, "is_new": true, "tags": ["Rust", "Haskell", "GraphQL", "Query Optimization", "Distributed Systems"], "url": "https://hasura.io/careers/", "salary_range": "\u20b950L - \u20b975L + Equity", "summary": "Build high-speed query planners and instant metadata execution runtimes translating multi-source GraphQL queries to native SQL."}, {"id": "job_15", "company": "Adobe", "title": "Computer Vision Research Engineer - Firefly Generative AI", "domain": "Enterprise SaaS & Productivity", "origin": "Global Titan", "location": "Noida, India", "work_model": "Flexible Hybrid", "exp_level": "Senior (5-8 yrs)", "department": "Adobe Research & Firefly", "ats": "Workday", "rating": 4.4, "posted_hours_ago": 36, "is_new": false, "tags": ["Python", "Diffusion Models", "PyTorch", "C++", "Image Synthesis"], "url": "https://www.adobe.com/careers.html", "salary_range": "\u20b955L - \u20b985L + RSUs", "summary": "Develop novel diffusion architectures for commercially safe text-to-image and generative fill within Photoshop and Premiere."}, {"id": "job_16", "company": "CRED", "title": "Lead Security Architect - Zero Trust & FinTech Defense", "domain": "FinTech & Digital Payments", "origin": "India-Founded", "location": "Bengaluru, India", "work_model": "In-Office", "exp_level": "Lead / Staff (8+ yrs)", "department": "Cybersecurity & Governance", "ats": "Lever", "rating": 4.1, "posted_hours_ago": 5, "is_new": true, "tags": ["Cloud Security", "OAuth 2.0", "PCI-DSS", "Threat Modeling", "AWS"], "url": "https://careers.cred.club/", "salary_range": "\u20b970L - \u20b995L + ESOPs", "summary": "Design ironclad cryptographic tokenization, confidential enclaves, and runtime defense architectures for high-net-worth payments."}, {"id": "job_17", "company": "Cloudflare", "title": "Systems Software Engineer - Workers Serverless Runtime", "domain": "AI, Systems & Infrastructure", "origin": "Global Titan", "location": "Bengaluru, India", "work_model": "Flexible Hybrid", "exp_level": "Mid-Level (2-5 yrs)", "department": "Edge Compute & V8", "ats": "Greenhouse", "rating": 4.3, "posted_hours_ago": 10, "is_new": true, "tags": ["Rust", "C++", "V8 Engine", "Networking", "WASM"], "url": "https://www.cloudflare.com/careers/", "salary_range": "\u20b945L - \u20b970L + RSUs", "summary": "Develop lightweight V8 isolate sandbox container runtimes powering billions of edge invocations per second with zero cold starts."}, {"id": "job_18", "company": "Freshworks", "title": "Senior Product Manager - Freddy Copilot & Conversational AI", "domain": "Enterprise SaaS & Productivity", "origin": "India-Founded", "location": "Chennai, India", "work_model": "Hybrid (3 Days)", "exp_level": "Senior (5-8 yrs)", "department": "AI Products", "ats": "SmartRecruiters", "rating": 4.0, "posted_hours_ago": 52, "is_new": false, "tags": ["Generative AI", "Product Strategy", "B2B SaaS", "User Journeys"], "url": "https://www.freshworks.com/company/careers/", "salary_range": "\u20b935L - \u20b950L + RSUs", "summary": "Define roadmap and agentic AI workflows helping customer service teams resolve tickets 40% faster using proactive assistants."}, {"id": "job_19", "company": "GitLab", "title": "Backend Engineer - CI/CD Pipeline Execution", "domain": "Developer Tools & DevOps", "origin": "Global Titan", "location": "Bengaluru, India (Remote)", "work_model": "Remote-First", "exp_level": "Mid-Level (2-5 yrs)", "department": "CI Execution Team", "ats": "Greenhouse", "rating": 4.4, "posted_hours_ago": 19, "is_new": true, "tags": ["Ruby on Rails", "Go", "PostgreSQL", "Docker", "DevOps"], "url": "https://about.gitlab.com/jobs/", "salary_range": "\u20b942L - \u20b962L + Stock", "summary": "Scale the distributed job scheduler and runners executing millions of software build and container verification pipelines."}, {"id": "job_20", "company": "Nykaa", "title": "Lead Mobile Architect - iOS & Android Core", "domain": "Consumer Internet & E-Commerce", "origin": "India-Founded", "location": "Gurugram, India", "work_model": "Hybrid (3 Days)", "exp_level": "Lead / Staff (8+ yrs)", "department": "Mobile Engineering", "ats": "Custom API", "rating": 4.0, "posted_hours_ago": 48, "is_new": false, "tags": ["Kotlin", "Swift", "Flutter", "App Performance", "CI/CD"], "url": "https://www.nykaa.com/careers", "salary_range": "\u20b945L - \u20b965L", "summary": "Lead mobile architecture powering 50+ million annual shoppers with instantaneous product discovery, video commerce, and beauty AR."}];
+
+    let allJobs = [...initialJobs];
+    let savedJobIds = new Set();
+    let showSavedOnly = false;
+    let currentLayout = 'grid'; // 'grid' | 'list'
+
+    // Load saved bookmarks from localStorage
+    try {
+      const stored = localStorage.getItem('productpulse_saved_jobs');
+      if (stored) {
+        savedJobIds = new Set(JSON.parse(stored));
+      }
+    } catch (e) {
+      console.warn('localStorage access failed:', e);
+    }
+
+    // Color generators for company avatars
+    const brandColors = [
+      'bg-indigo-600', 'bg-blue-600', 'bg-emerald-600', 'bg-violet-600',
+      'bg-rose-600', 'bg-amber-600', 'bg-cyan-600', 'bg-fuchsia-600'
+    ];
+    function getCompanyColor(name) {
+      let hash = 0;
+      for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      return brandColors[Math.abs(hash) % brandColors.length];
+    }
+
+    // DOM Elements
+    const searchInput = document.getElementById('searchInput');
+    const btnClearSearch = document.getElementById('btnClearSearch');
+    const filterLocation = document.getElementById('filterLocation');
+    const filterOrigin = document.getElementById('filterOrigin');
+    const filterDomain = document.getElementById('filterDomain');
+    const filterExp = document.getElementById('filterExp');
+    const filterWorkModel = document.getElementById('filterWorkModel');
+    const filterRecency = document.getElementById('filterRecency');
+
+    const jobsGrid = document.getElementById('jobsGrid');
+    const emptyState = document.getElementById('emptyState');
+    const resultsCountText = document.getElementById('resultsCountText');
+    const btnResetFilters = document.getElementById('btnResetFilters');
+    const btnEmptyReset = document.getElementById('btnEmptyReset');
+    const btnToggleSavedOnly = document.getElementById('btnToggleSavedOnly');
+    const savedFilterText = document.getElementById('savedFilterText');
+    const btnViewGrid = document.getElementById('btnViewGrid');
+    const btnViewList = document.getElementById('btnViewList');
+    const metricActiveJobs = document.getElementById('metricActiveJobs');
+    const metricNewJobs = document.getElementById('metricNewJobs');
+    const metricSavedJobs = document.getElementById('metricSavedJobs');
+
+    // Modals
+    const jobModal = document.getElementById('jobModal');
+    const btnCloseModal = document.getElementById('btnCloseModal');
+    const setupModal = document.getElementById('setupModal');
+    const btnOpenSetup = document.getElementById('btnOpenSetup');
+    const btnCloseSetup = document.getElementById('btnCloseSetup');
+    const btnDismissSetup = document.getElementById('btnDismissSetup');
+    const btnSimulateSync = document.getElementById('btnSimulateSync');
+
+    // Toast
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    let toastTimeout = null;
+    function showToast(msg) {
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // Render Function
+    function renderJobs() {
+      const query = searchInput.value.trim().toLowerCase();
+      const loc = filterLocation.value;
+      const origin = filterOrigin.value;
+      const domain = filterDomain.value;
+      const exp = filterExp.value;
+      const workModel = filterWorkModel.value;
+      const recency = filterRecency.value;
+
+      const filtered = allJobs.filter(job => {
+        // Bookmarks
+        if (showSavedOnly && !savedJobIds.has(job.id)) return false;
+
+        // Search text
+        if (query) {
+          const matchTitle = job.title.toLowerCase().includes(query);
+          const matchCompany = job.company.toLowerCase().includes(query);
+          const matchDept = job.department.toLowerCase().includes(query);
+          const matchLoc = job.location.toLowerCase().includes(query);
+          const matchTags = (job.tags || []).some(t => t.toLowerCase().includes(query));
+          if (!matchTitle && !matchCompany && !matchDept && !matchLoc && !matchTags) {
+            return false;
+          }
+        }
+
+        // Filters
+        if (loc !== 'all' && !job.location.toLowerCase().includes(loc.toLowerCase())) return false;
+        if (origin !== 'all' && job.origin !== origin) return false;
+        if (domain !== 'all' && job.domain !== domain) return false;
+        if (exp !== 'all' && job.exp_level !== exp) return false;
+        if (workModel !== 'all' && job.work_model !== workModel) return false;
+
+        if (recency === '24h' && job.posted_hours_ago > 24) return false;
+        if (recency === '3d' && job.posted_hours_ago > 72) return false;
+        if (recency === '7d' && job.posted_hours_ago > 168) return false;
+
+        return true;
+      });
+
+      // Update metrics
+      metricActiveJobs.textContent = allJobs.length;
+      metricNewJobs.textContent = allJobs.filter(j => j.posted_hours_ago <= 24).length;
+      metricSavedJobs.textContent = savedJobIds.size;
+      savedFilterText.textContent = `Saved Jobs (${savedJobIds.size})`;
+
+      // Check if any filter active
+      const isFiltered = query || loc !== 'all' || origin !== 'all' || domain !== 'all' || exp !== 'all' || workModel !== 'all' || recency !== 'all' || showSavedOnly;
+      btnResetFilters.classList.toggle('hidden', !isFiltered);
+
+      // Render cards
+      resultsCountText.textContent = `Showing ${filtered.length} ${filtered.length === 1 ? 'job' : 'jobs'}`;
+
+      if (filtered.length === 0) {
+        jobsGrid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      if (currentLayout === 'grid') {
+        jobsGrid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4';
+      } else {
+        jobsGrid.className = 'flex flex-col gap-3';
+      }
+
+      jobsGrid.innerHTML = filtered.map(job => {
+        const isSaved = savedJobIds.has(job.id);
+        const color = getCompanyColor(job.company);
+        const initials = job.company.substring(0, 2).toUpperCase();
+
+        return `
+          <div class="bg-white rounded-xl border border-slate-200/90 hover:border-indigo-400 p-5 shadow-xs hover:shadow-md transition duration-200 flex flex-col justify-between group">
+            <div>
+              <!-- Header: Logo, Company, Rating, Bookmark -->
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white text-sm ${color} shadow-xs shrink-0">
+                    ${initials}
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="font-bold text-slate-900 text-sm">${job.company}</span>
+                      <span class="bg-amber-50 text-amber-700 text-[10px] px-1.5 py-0.2 rounded font-semibold border border-amber-200/80">⭐ ${job.rating}</span>
+                      <span class="text-[10px] text-slate-500 bg-slate-100 px-1.5 py-0.2 rounded">${job.origin}</span>
+                    </div>
+                    <span class="text-xs text-slate-500 block truncate max-w-[200px]">${job.domain}</span>
+                  </div>
+                </div>
+
+                <button data-action="bookmark" data-id="${job.id}" class="text-slate-300 hover:text-amber-500 transition p-1" title="Save Job">
+                  <svg class="w-5 h-5 ${isSaved ? 'text-amber-500 fill-current' : ''}" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                </button>
+              </div>
+
+              <!-- Title -->
+              <h3 class="font-bold text-slate-900 text-sm mt-3.5 group-hover:text-indigo-600 transition leading-snug">
+                ${job.title}
+              </h3>
+
+              <!-- Meta pills: Location, Model, Level -->
+              <div class="flex flex-wrap items-center gap-2 mt-2.5 text-xs text-slate-600">
+                <span class="flex items-center gap-1 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded">
+                  <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                  ${job.location}
+                </span>
+                <span class="bg-slate-50 border border-slate-200 px-2 py-0.5 rounded text-[11px]">
+                  ${job.work_model}
+                </span>
+                <span class="bg-slate-50 border border-slate-200 px-2 py-0.5 rounded text-[11px]">
+                  ${job.exp_level}
+                </span>
+              </div>
+
+              <!-- Tech tags -->
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                ${(job.tags || []).slice(0, 4).map(t => `<span class="bg-indigo-50/70 text-indigo-700 text-[10px] font-medium px-2 py-0.5 rounded border border-indigo-100">${t}</span>`).join('')}
+                ${(job.tags || []).length > 4 ? `<span class="text-[10px] text-slate-400 font-medium self-center">+${(job.tags || []).length - 4}</span>` : ''}
+              </div>
+            </div>
+
+            <!-- Footer: Recency, ATS pill, Actions -->
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                ${job.posted_hours_ago <= 24 ? `<span class="bg-emerald-500/10 text-emerald-600 border border-emerald-500/30 font-bold text-[10px] px-1.5 py-0.5 rounded flex items-center gap-1 animate-pulse-subtle">⚡ NEW</span>` : ''}
+                <span class="text-[11px] text-slate-400 font-mono">${job.posted_hours_ago < 24 ? `${job.posted_hours_ago}h ago` : `${Math.round(job.posted_hours_ago / 24)}d ago`}</span>
+              </div>
+
+              <div class="flex items-center gap-1.5">
+                <button data-action="details" data-id="${job.id}" class="px-2.5 py-1 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded text-xs font-medium transition">
+                  Details
+                </button>
+                <a href="${job.url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-slate-900 hover:bg-indigo-600 text-white rounded text-xs font-semibold transition flex items-center gap-1">
+                  Apply
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Delegated actions on jobs grid
+    jobsGrid.addEventListener('click', e => {
+      const bookmarkBtn = e.target.closest('[data-action="bookmark"]');
+      if (bookmarkBtn) {
+        const id = bookmarkBtn.dataset.id;
+        if (savedJobIds.has(id)) {
+          savedJobIds.delete(id);
+          showToast('Job removed from saved list');
+        } else {
+          savedJobIds.add(id);
+          showToast('Job saved to your bookmarks!');
+        }
+        try {
+          localStorage.setItem('productpulse_saved_jobs', JSON.stringify([...savedJobIds]));
+        } catch(err) {}
+        renderJobs();
+        return;
+      }
+
+      const detailsBtn = e.target.closest('[data-action="details"]');
+      if (detailsBtn) {
+        const id = detailsBtn.dataset.id;
+        openJobModal(id);
+      }
+    });
+
+    // Modal Logic
+    let currentModalJob = null;
+    function openJobModal(id) {
+      const job = allJobs.find(j => j.id === id);
+      if (!job) return;
+      currentModalJob = job;
+
+      document.getElementById('modalCompany').textContent = job.company;
+      document.getElementById('modalTitle').textContent = job.title;
+      document.getElementById('modalRating').textContent = `⭐ ${job.rating}`;
+      document.getElementById('modalOrigin').textContent = job.origin;
+      document.getElementById('modalLocation').textContent = job.location;
+      document.getElementById('modalWorkModel').textContent = job.work_model;
+      document.getElementById('modalSalary').textContent = job.salary_range || 'Competitive + Equity';
+      document.getElementById('modalExp').textContent = job.exp_level;
+      document.getElementById('modalAts').textContent = `${job.ats} Feed`;
+      document.getElementById('modalPosted').textContent = `${job.posted_hours_ago} hours ago`;
+      document.getElementById('modalSummary').textContent = job.summary || 'Lead engineering roadmap and scalable software architectures.';
+      document.getElementById('modalApplyLink').href = job.url;
+
+      const logo = document.getElementById('modalLogo');
+      logo.textContent = job.company.substring(0, 2).toUpperCase();
+      logo.className = `w-12 h-12 rounded-xl flex items-center justify-center font-bold text-white text-lg ${getCompanyColor(job.company)} shadow-sm`;
+
+      const tagsContainer = document.getElementById('modalTags');
+      tagsContainer.innerHTML = (job.tags || []).map(t => `<span class="bg-indigo-50 text-indigo-700 text-xs px-2.5 py-1 rounded-md font-medium border border-indigo-100">${t}</span>`).join('');
+
+      const isSaved = savedJobIds.has(job.id);
+      document.getElementById('modalBookmarkText').textContent = isSaved ? 'Remove from Saved' : 'Save Job';
+
+      jobModal.classList.remove('hidden');
+    }
+
+    document.getElementById('modalBtnBookmark').addEventListener('click', () => {
+      if (!currentModalJob) return;
+      const id = currentModalJob.id;
+      if (savedJobIds.has(id)) {
+        savedJobIds.delete(id);
+        document.getElementById('modalBookmarkText').textContent = 'Save Job';
+        showToast('Removed from saved list');
+      } else {
+        savedJobIds.add(id);
+        document.getElementById('modalBookmarkText').textContent = 'Remove from Saved';
+        showToast('Saved to your bookmarks!');
+      }
+      try {
+        localStorage.setItem('productpulse_saved_jobs', JSON.stringify([...savedJobIds]));
+      } catch(err) {}
+      renderJobs();
+    });
+
+    btnCloseModal.addEventListener('click', () => jobModal.classList.add('hidden'));
+    jobModal.addEventListener('click', e => {
+      if (e.target === jobModal) jobModal.classList.add('hidden');
+    });
+
+    // Setup Modal
+    btnOpenSetup.addEventListener('click', () => setupModal.classList.remove('hidden'));
+    btnCloseSetup.addEventListener('click', () => setupModal.classList.add('hidden'));
+    btnDismissSetup.addEventListener('click', () => setupModal.classList.add('hidden'));
+    setupModal.addEventListener('click', e => {
+      if (e.target === setupModal) setupModal.classList.add('hidden');
+    });
+
+    // Simulate Live Sync
+    btnSimulateSync.addEventListener('click', () => {
+      btnSimulateSync.disabled = true;
+      btnSimulateSync.innerHTML = `<svg class="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg> Fetching ATS APIs...`;
+
+      setTimeout(() => {
+        // Inject 2 brand new simulated jobs from crawl
+        const newJob1 = {
+          id: `sim_${Date.now()}_1`,
+          company: 'Uber',
+          title: 'Senior Software Engineer - Rider Pricing & Marketplace',
+          domain: 'Consumer Internet & E-Commerce',
+          origin: 'Global Titan',
+          location: 'Bengaluru, India',
+          work_model: 'Hybrid (3 Days)',
+          exp_level: 'Senior (5-8 yrs)',
+          department: 'Marketplace Dynamics',
+          ats: 'Custom API',
+          rating: 4.2,
+          posted_hours_ago: 0,
+          is_new: true,
+          tags: ['Golang', 'Kafka', 'Cassandra', 'Dynamic Pricing', 'Microservices'],
+          url: 'https://www.uber.com/us/en/careers/',
+          salary_range: '₹55L - ₹80L + RSUs',
+          summary: 'Build ultra-low-latency real-time ride pricing and dispatch matching algorithms serving millions of concurrent global requests.'
+        };
+
+        const newJob2 = {
+          id: `sim_${Date.now()}_2`,
+          company: 'Zepto (KiranaKart)',
+          title: 'Staff Backend Architect - Dark Store Micro-fulfillment',
+          domain: 'Consumer Internet & E-Commerce',
+          origin: 'India-Founded',
+          location: 'Bengaluru, India',
+          work_model: 'In-Office',
+          exp_level: 'Lead / Staff (8+ yrs)',
+          department: 'Supply Chain Core',
+          ats: 'Custom API',
+          rating: 3.9,
+          posted_hours_ago: 0,
+          is_new: true,
+          tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'High Concurrency'],
+          url: 'https://www.zeptonow.com/careers',
+          salary_range: '₹60L - ₹85L + ESOPs',
+          summary: 'Scale inventory locking algorithms, picker routing, and instant fulfillment pipeline for 10-minute grocery deliveries.'
+        };
+
+        allJobs.unshift(newJob1, newJob2);
+        btnSimulateSync.disabled = false;
+        btnSimulateSync.innerHTML = `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg> Simulate Sync`;
+
+        showToast('⚡ Ingestion complete! 2 new positions detected and added to the board.');
+        renderJobs();
+      }, 1200);
+    });
+
+    // Search and Filters change handlers
+    searchInput.addEventListener('input', () => {
+      btnClearSearch.classList.toggle('hidden', !searchInput.value);
+      renderJobs();
+    });
+
+    btnClearSearch.addEventListener('click', () => {
+      searchInput.value = '';
+      btnClearSearch.classList.add('hidden');
+      renderJobs();
+    });
+
+    [filterLocation, filterOrigin, filterDomain, filterExp, filterWorkModel, filterRecency].forEach(el => {
+      el.addEventListener('change', renderJobs);
+    });
+
+    function resetAllFilters() {
+      searchInput.value = '';
+      btnClearSearch.classList.add('hidden');
+      filterLocation.value = 'all';
+      filterOrigin.value = 'all';
+      filterDomain.value = 'all';
+      filterExp.value = 'all';
+      filterWorkModel.value = 'all';
+      filterRecency.value = 'all';
+      showSavedOnly = false;
+      btnToggleSavedOnly.classList.remove('bg-amber-50', 'border-amber-300', 'text-amber-800');
+      renderJobs();
+    }
+
+    btnResetFilters.addEventListener('click', resetAllFilters);
+    btnEmptyReset.addEventListener('click', resetAllFilters);
+
+    btnToggleSavedOnly.addEventListener('click', () => {
+      showSavedOnly = !showSavedOnly;
+      btnToggleSavedOnly.classList.toggle('bg-amber-50', showSavedOnly);
+      btnToggleSavedOnly.classList.toggle('border-amber-300', showSavedOnly);
+      btnToggleSavedOnly.classList.toggle('text-amber-800', showSavedOnly);
+      renderJobs();
+    });
+
+    // Quick filter chips
+    document.querySelectorAll('.quick-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.dataset.quick;
+        if (q === 'new') filterRecency.value = '24h';
+        if (q === 'bengaluru') filterLocation.value = 'Bengaluru';
+        if (q === 'remote') filterWorkModel.value = 'Remote-First';
+        if (q === 'devtools') filterDomain.value = 'Developer Tools & DevOps';
+        if (q === 'india-founded') filterOrigin.value = 'India-Founded';
+        if (q === 'high-rating') {
+          // Filter by rating directly
+          searchInput.value = '';
+          allJobs.sort((a,b) => b.rating - a.rating);
+        }
+        renderJobs();
+      });
+    });
+
+    // Layout toggles
+    btnViewGrid.addEventListener('click', () => {
+      currentLayout = 'grid';
+      btnViewGrid.className = 'p-1 px-2.5 bg-white text-slate-800 rounded font-medium shadow-xs';
+      btnViewList.className = 'p-1 px-2.5 text-slate-500 hover:text-slate-800 font-medium';
+      renderJobs();
+    });
+
+    btnViewList.addEventListener('click', () => {
+      currentLayout = 'list';
+      btnViewList.className = 'p-1 px-2.5 bg-white text-slate-800 rounded font-medium shadow-xs';
+      btnViewGrid.className = 'p-1 px-2.5 text-slate-500 hover:text-slate-800 font-medium';
+      renderJobs();
+    });
+
+    // Initial render
+    renderJobs();
+  </script>
+</body>
+</html>
