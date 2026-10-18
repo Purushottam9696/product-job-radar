@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_synced": "2026-10-17T19:53:28.929701",
+    "last_synced": "2026-10-18T02:17:45.676043",
     "total_jobs": 2716,
     "total_companies_tracked": 30,
-    "new_jobs_count": 1
+    "new_jobs_count": 0
   },
   "jobs": [
     {
@@ -5614,7 +5614,7 @@
       "company_rating": 4.2,
       "ats": "Greenhouse",
       "first_seen": "2026-10-17T19:53:28.929701",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_stripe_8162189",
