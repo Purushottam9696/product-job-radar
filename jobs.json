@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_synced": "2026-10-24T15:06:35.750082",
+    "last_synced": "2026-10-24T20:00:10.226148",
     "total_jobs": 2758,
     "total_companies_tracked": 30,
-    "new_jobs_count": 1
+    "new_jobs_count": 0
   },
   "jobs": [
     {
@@ -3580,10 +3580,10 @@
       "id": "gh_stripe_8055930",
       "company": "Stripe",
       "title": "Forward Deployed AI Accelerator, Marketing",
-      "location": "Remote in the US, Remote in Canada",
+      "location": "Seattle, San Francisco, New York, Chicago, Atlanta, Remote in the US, Canada",
       "department": "2315 Marketing - Marketing Operations",
       "url": "https://stripe.com/jobs/search?gh_jid=8055930",
-      "updated_at": "2026-10-22T09:17:06-04:00",
+      "updated_at": "2026-10-24T15:26:07-04:00",
       "domain": "FinTech & Digital Payments",
       "origin": "Global Titan",
       "company_rating": 4.2,
@@ -3595,10 +3595,10 @@
       "id": "gh_stripe_7747640",
       "company": "Stripe",
       "title": "Forward Deployed AI Accelerator, Marketing",
-      "location": "Seattle, San Francisco, New York",
+      "location": "Seattle, San Francisco, New York, Chicago, Atlanta, Remote in the US, Canada",
       "department": "2315 Marketing - Marketing Operations",
       "url": "https://stripe.com/jobs/search?gh_jid=7747640",
-      "updated_at": "2026-10-22T09:17:04-04:00",
+      "updated_at": "2026-10-24T15:25:15-04:00",
       "domain": "FinTech & Digital Payments",
       "origin": "Global Titan",
       "company_rating": 4.2,
@@ -34174,7 +34174,7 @@
       "company_rating": 4.3,
       "ats": "Greenhouse",
       "first_seen": "2026-10-24T15:06:35.750082",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_cloudflare_8204256",
