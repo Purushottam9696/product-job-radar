@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_synced": "2026-10-31T03:26:16.493639",
+    "last_synced": "2026-10-31T11:27:44.495309",
     "total_jobs": 2818,
     "total_companies_tracked": 30,
-    "new_jobs_count": 3
+    "new_jobs_count": 1
   },
   "jobs": [
     {
@@ -9193,7 +9193,7 @@
       "location": "N/A",
       "department": "8516 Payments Global",
       "url": "https://stripe.com/jobs/search?gh_jid=8260982",
-      "updated_at": "2026-10-29T16:49:55-04:00",
+      "updated_at": "2026-10-31T00:34:48-04:00",
       "domain": "FinTech & Digital Payments",
       "origin": "Global Titan",
       "company_rating": 4.2,
@@ -14203,7 +14203,7 @@
       "location": "United States",
       "department": "Professional Services Operations",
       "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8463063002",
-      "updated_at": "2026-10-26T19:52:02-04:00",
+      "updated_at": "2026-10-31T03:33:18-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
       "company_rating": 4.4,
@@ -19888,7 +19888,7 @@
       "location": "Remote - Colorado",
       "department": "Field Engineering - FE Direct Enterprise",
       "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8569633002",
-      "updated_at": "2026-10-29T08:43:43-04:00",
+      "updated_at": "2026-10-31T04:32:14-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
       "company_rating": 4.4,
@@ -19948,7 +19948,7 @@
       "location": "Denver, Colorado",
       "department": "Field Engineering - FE Direct Enterprise",
       "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8900134002",
-      "updated_at": "2026-10-21T13:08:46-04:00",
+      "updated_at": "2026-10-31T04:32:14-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
       "company_rating": 4.4,
@@ -26884,7 +26884,7 @@
       "company_rating": 4.2,
       "ats": "Greenhouse",
       "first_seen": "2026-10-31T03:26:16.493639",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_airbnb_8242459",
@@ -30352,21 +30352,6 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8311366",
-      "company": "Cloudflare",
-      "title": "Data Center Network Operations Engineer",
-      "location": "Hybrid",
-      "department": "Engineering",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8311366?gh_jid=8311366",
-      "updated_at": "2026-10-30T18:16:11-04:00",
-      "domain": "AI, Systems & Infrastructure",
-      "origin": "Global Titan",
-      "company_rating": 4.3,
-      "ats": "Greenhouse",
-      "first_seen": "2026-10-23T20:49:56.243623",
-      "is_new": false
-    },
-    {
       "id": "gh_cloudflare_8311376",
       "company": "Cloudflare",
       "title": "Data Center Network Operations Engineer",
@@ -30379,6 +30364,21 @@
       "company_rating": 4.3,
       "ats": "Greenhouse",
       "first_seen": "2026-10-28T11:52:51.794796",
+      "is_new": false
+    },
+    {
+      "id": "gh_cloudflare_8311366",
+      "company": "Cloudflare",
+      "title": "Data Center Network Operations Engineer",
+      "location": "Hybrid",
+      "department": "Engineering",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8311366?gh_jid=8311366",
+      "updated_at": "2026-10-30T18:16:11-04:00",
+      "domain": "AI, Systems & Infrastructure",
+      "origin": "Global Titan",
+      "company_rating": 4.3,
+      "ats": "Greenhouse",
+      "first_seen": "2026-10-23T20:49:56.243623",
       "is_new": false
     },
     {
@@ -30517,12 +30517,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8180715",
+      "id": "gh_cloudflare_7735836",
       "company": "Cloudflare",
       "title": "Digital Natives Account Executive",
       "location": "Hybrid",
-      "department": "Mid Market",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8180715?gh_jid=8180715",
+      "department": "Field Sales",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7735836?gh_jid=7735836",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -30532,12 +30532,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_7735836",
+      "id": "gh_cloudflare_8180715",
       "company": "Cloudflare",
       "title": "Digital Natives Account Executive",
       "location": "Hybrid",
-      "department": "Field Sales",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/7735836?gh_jid=7735836",
+      "department": "Mid Market",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8180715?gh_jid=8180715",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -31882,12 +31882,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8180488",
+      "id": "gh_cloudflare_8099018",
       "company": "Cloudflare",
       "title": "Recruiting Coordinator (Contract)",
       "location": "Hybrid",
       "department": "People & Places",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8180488?gh_jid=8180488",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8099018?gh_jid=8099018",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -31897,12 +31897,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8099018",
+      "id": "gh_cloudflare_8180488",
       "company": "Cloudflare",
       "title": "Recruiting Coordinator (Contract)",
       "location": "Hybrid",
       "department": "People & Places",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8099018?gh_jid=8099018",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8180488?gh_jid=8180488",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -32812,12 +32812,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8131833",
+      "id": "gh_cloudflare_7530475",
       "company": "Cloudflare",
       "title": "Senior Customer Engineer, Public Sector Federal",
       "location": "Hybrid",
       "department": "Solution Engineering",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8131833?gh_jid=8131833",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7530475?gh_jid=7530475",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -32827,12 +32827,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_7530475",
+      "id": "gh_cloudflare_8131833",
       "company": "Cloudflare",
       "title": "Senior Customer Engineer, Public Sector Federal",
       "location": "Hybrid",
       "department": "Solution Engineering",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/7530475?gh_jid=7530475",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8131833?gh_jid=8131833",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -33307,12 +33307,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8173707",
+      "id": "gh_cloudflare_8265704",
       "company": "Cloudflare",
       "title": "Senior Forward Deployed Engineer",
       "location": "Hybrid",
       "department": "Developer Relations",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8173707?gh_jid=8173707",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8265704?gh_jid=8265704",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -33337,12 +33337,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8265704",
+      "id": "gh_cloudflare_8206674",
       "company": "Cloudflare",
       "title": "Senior Forward Deployed Engineer",
       "location": "Hybrid",
       "department": "Developer Relations",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8265704?gh_jid=8265704",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8206674?gh_jid=8206674",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -33352,12 +33352,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8206674",
+      "id": "gh_cloudflare_8173707",
       "company": "Cloudflare",
       "title": "Senior Forward Deployed Engineer",
       "location": "Hybrid",
       "department": "Developer Relations",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8206674?gh_jid=8206674",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8173707?gh_jid=8173707",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -35647,12 +35647,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8259402",
+      "id": "gh_cloudflare_7831810",
       "company": "Cloudflare",
       "title": "Software Engineer, AI Agents",
       "location": "In-Office",
       "department": "Engineering",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8259402?gh_jid=8259402",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/7831810?gh_jid=7831810",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -35662,12 +35662,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_7831810",
+      "id": "gh_cloudflare_8259402",
       "company": "Cloudflare",
       "title": "Software Engineer, AI Agents",
       "location": "In-Office",
       "department": "Engineering",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/7831810?gh_jid=7831810",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8259402?gh_jid=8259402",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -35752,12 +35752,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8245197",
+      "id": "gh_cloudflare_8245211",
       "company": "Cloudflare",
       "title": "Software Engineer Intern (2027)",
       "location": "In-Office",
       "department": "University",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8245197?gh_jid=8245197",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8245211?gh_jid=8245211",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -35767,12 +35767,12 @@
       "is_new": false
     },
     {
-      "id": "gh_cloudflare_8245211",
+      "id": "gh_cloudflare_8245197",
       "company": "Cloudflare",
       "title": "Software Engineer Intern (2027)",
       "location": "In-Office",
       "department": "University",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8245211?gh_jid=8245211",
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8245197?gh_jid=8245197",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -35818,21 +35818,6 @@
       "location": "Hybrid",
       "department": "Engineering",
       "url": "https://boards.greenhouse.io/cloudflare/jobs/7446310?gh_jid=7446310",
-      "updated_at": "2026-10-30T18:16:11-04:00",
-      "domain": "AI, Systems & Infrastructure",
-      "origin": "Global Titan",
-      "company_rating": 4.3,
-      "ats": "Greenhouse",
-      "first_seen": "2026-10-16T17:42:19.426555",
-      "is_new": false
-    },
-    {
-      "id": "gh_cloudflare_8168623",
-      "company": "Cloudflare",
-      "title": "Software Engineer - Platforms & Productivity",
-      "location": "Hybrid",
-      "department": "Engineering",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/8168623?gh_jid=8168623",
       "updated_at": "2026-10-30T18:16:11-04:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
@@ -36619,7 +36604,7 @@
       "company_rating": 4.3,
       "ats": "Greenhouse",
       "first_seen": "2026-10-31T03:26:16.493639",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_cloudflare_8335468",
@@ -36634,7 +36619,7 @@
       "company_rating": 4.3,
       "ats": "Greenhouse",
       "first_seen": "2026-10-31T03:26:16.493639",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_cloudflare_7857793",
@@ -37267,12 +37252,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8749950002",
+      "id": "gh_gitlab_8682860002",
       "company": "GitLab",
       "title": "Backend Engineer (Ruby), Plan: Spec-Driven Development",
-      "location": "Remote, Poland",
+      "location": "Remote, United Kingdom",
       "department": "DevOps Engineering",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8749950002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8682860002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -37282,12 +37267,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8682860002",
+      "id": "gh_gitlab_8749950002",
       "company": "GitLab",
       "title": "Backend Engineer (Ruby), Plan: Spec-Driven Development",
-      "location": "Remote, United Kingdom",
+      "location": "Remote, Poland",
       "department": "DevOps Engineering",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8682860002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8749950002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -37342,13 +37327,13 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8532272002",
+      "id": "gh_gitlab_8532274002",
       "company": "GitLab",
       "title": "Business Development Representative",
-      "location": "Remote, North America",
+      "location": "Remote, Ireland; Remote, Spain; Remote, United Kingdom",
       "department": "Sales Development",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8532272002",
-      "updated_at": "2026-10-28T12:23:39-04:00",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8532274002",
+      "updated_at": "2026-10-29T13:22:25-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
       "company_rating": 4.4,
@@ -37357,13 +37342,13 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8532274002",
+      "id": "gh_gitlab_8532272002",
       "company": "GitLab",
       "title": "Business Development Representative",
-      "location": "Remote, Ireland; Remote, Spain; Remote, United Kingdom",
+      "location": "Remote, North America",
       "department": "Sales Development",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8532274002",
-      "updated_at": "2026-10-29T13:22:25-04:00",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8532272002",
+      "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
       "company_rating": 4.4,
@@ -38542,12 +38527,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8784056002",
+      "id": "gh_gitlab_8693068002",
       "company": "GitLab",
       "title": "Principal Technical Program Manager",
-      "location": "Bangalore, India",
+      "location": "Remote, Canada; Remote, United States",
       "department": "Office of the CTO",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8784056002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8693068002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -38557,12 +38542,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8693068002",
+      "id": "gh_gitlab_8784056002",
       "company": "GitLab",
       "title": "Principal Technical Program Manager",
-      "location": "Remote, Canada; Remote, United States",
+      "location": "Bangalore, India",
       "department": "Office of the CTO",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8693068002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8784056002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -39007,12 +38992,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8729451002",
+      "id": "gh_gitlab_8749951002",
       "company": "GitLab",
       "title": "Senior Backend Engineer (Go), Tenant Scale: Gitaly",
-      "location": "Remote, Canada; Remote, United Kingdom",
+      "location": "Remote, Poland",
       "department": "Tenant Scale Engineering",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8729451002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8749951002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -39022,12 +39007,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8749951002",
+      "id": "gh_gitlab_8729451002",
       "company": "GitLab",
       "title": "Senior Backend Engineer (Go), Tenant Scale: Gitaly",
-      "location": "Remote, Poland",
+      "location": "Remote, Canada; Remote, United Kingdom",
       "department": "Tenant Scale Engineering",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8749951002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8729451002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -39667,12 +39652,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8731996002",
+      "id": "gh_gitlab_8783485002",
       "company": "GitLab",
       "title": "Senior Solutions Architect",
-      "location": "Bangalore, India",
+      "location": "Remote, South Korea",
       "department": "SA",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8731996002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8783485002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -39682,12 +39667,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8783485002",
+      "id": "gh_gitlab_8731996002",
       "company": "GitLab",
       "title": "Senior Solutions Architect",
-      "location": "Remote, South Korea",
+      "location": "Bangalore, India",
       "department": "SA",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8783485002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8731996002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -39817,12 +39802,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8692880002",
+      "id": "gh_gitlab_8692874002",
       "company": "GitLab",
       "title": "Senior Support Engineer",
-      "location": "Remote, South Korea",
+      "location": "Bangalore, India",
       "department": "Customer Support",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8692880002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8692874002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -39832,12 +39817,12 @@
       "is_new": false
     },
     {
-      "id": "gh_gitlab_8692874002",
+      "id": "gh_gitlab_8692880002",
       "company": "GitLab",
       "title": "Senior Support Engineer",
-      "location": "Bangalore, India",
+      "location": "Remote, South Korea",
       "department": "Customer Support",
-      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8692874002",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8692880002",
       "updated_at": "2026-10-28T12:23:39-04:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
@@ -40340,6 +40325,21 @@
       "ats": "Greenhouse",
       "first_seen": "2026-10-16T17:42:19.426555",
       "is_new": false
+    },
+    {
+      "id": "gh_gitlab_8632446002",
+      "company": "GitLab",
+      "title": "Staff Software Engineer, Security Foundations",
+      "location": "Bangalore, India",
+      "department": "Sec Engineering",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8632446002",
+      "updated_at": "2026-10-31T02:11:12-04:00",
+      "domain": "Developer Tools & DevOps",
+      "origin": "Global Titan",
+      "company_rating": 4.4,
+      "ats": "Greenhouse",
+      "first_seen": "2026-10-31T11:27:44.495309",
+      "is_new": true
     },
     {
       "id": "gh_gitlab_8886426002",
