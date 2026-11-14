@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_synced": "2026-11-14T04:14:06.536636",
-    "total_jobs": 2909,
+    "last_synced": "2026-11-14T12:45:08.572461",
+    "total_jobs": 2911,
     "total_companies_tracked": 30,
-    "new_jobs_count": 5
+    "new_jobs_count": 2
   },
   "jobs": [
     {
@@ -14209,7 +14209,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-14T04:14:06.536636",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_databricks_8910846002",
@@ -14224,7 +14224,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-14T04:14:06.536636",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_databricks_7586263002",
@@ -17899,7 +17899,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-14T04:14:06.536636",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_databricks_8612863002",
@@ -31294,7 +31294,7 @@
       "company_rating": 4.3,
       "ats": "Greenhouse",
       "first_seen": "2026-11-14T04:14:06.536636",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_cloudflare_8243255",
@@ -32698,7 +32698,7 @@
       "location": "Hybrid",
       "department": "Developer Relations",
       "url": "https://boards.greenhouse.io/cloudflare/jobs/8179387?gh_jid=8179387",
-      "updated_at": "2026-11-09T19:03:42-05:00",
+      "updated_at": "2026-11-14T02:15:15-05:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
       "company_rating": 4.3,
@@ -35818,7 +35818,7 @@
       "location": "Hybrid",
       "department": "Developer Relations",
       "url": "https://boards.greenhouse.io/cloudflare/jobs/8169689?gh_jid=8169689",
-      "updated_at": "2026-11-09T19:03:42-05:00",
+      "updated_at": "2026-11-14T02:43:52-05:00",
       "domain": "AI, Systems & Infrastructure",
       "origin": "Global Titan",
       "company_rating": 4.3,
@@ -40504,7 +40504,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-14T04:14:06.536636",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_gitlab_8918216002",
@@ -42410,6 +42410,36 @@
       "ats": "Lever",
       "first_seen": "2026-10-29T03:39:31.278394",
       "is_new": false
+    },
+    {
+      "id": "lev_spotify_1bbaf909-5ff3-4ed6-87ca-f7ff007a169c",
+      "company": "Spotify",
+      "title": "Data Scientist - Music Mission",
+      "location": "New York, NY",
+      "department": "Data and Analytics",
+      "url": "https://jobs.lever.co/spotify/1bbaf909-5ff3-4ed6-87ca-f7ff007a169c",
+      "updated_at": "2026-06-22T17:14:00.858000",
+      "domain": "Consumer Internet & E-Commerce",
+      "origin": "Global Titan",
+      "company_rating": 4.2,
+      "ats": "Lever",
+      "first_seen": "2026-11-14T12:45:08.572461",
+      "is_new": true
+    },
+    {
+      "id": "lev_spotify_56ea6f2e-f20b-4e46-ab94-d3eb0a89482d",
+      "company": "Spotify",
+      "title": "Data Scientist - Music Promotion",
+      "location": "New York, NY",
+      "department": "Data and Analytics",
+      "url": "https://jobs.lever.co/spotify/56ea6f2e-f20b-4e46-ab94-d3eb0a89482d",
+      "updated_at": "2026-09-10T13:13:31.096000",
+      "domain": "Consumer Internet & E-Commerce",
+      "origin": "Global Titan",
+      "company_rating": 4.2,
+      "ats": "Lever",
+      "first_seen": "2026-11-14T12:45:08.572461",
+      "is_new": true
     },
     {
       "id": "lev_spotify_5861816e-7ac4-4921-8e90-8e093707e27d",
