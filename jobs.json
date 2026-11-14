@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_synced": "2026-11-14T12:45:08.572461",
+    "last_synced": "2026-11-14T21:50:11.806944",
     "total_jobs": 2911,
     "total_companies_tracked": 30,
-    "new_jobs_count": 2
+    "new_jobs_count": 0
   },
   "jobs": [
     {
@@ -17893,7 +17893,7 @@
       "location": "West Coast - United States",
       "department": "Marketing",
       "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8487145002",
-      "updated_at": "2026-11-13T19:23:42-05:00",
+      "updated_at": "2026-11-14T11:04:16-05:00",
       "domain": "Developer Tools & DevOps",
       "origin": "Global Titan",
       "company_rating": 4.4,
@@ -42424,7 +42424,7 @@
       "company_rating": 4.2,
       "ats": "Lever",
       "first_seen": "2026-11-14T12:45:08.572461",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "lev_spotify_56ea6f2e-f20b-4e46-ab94-d3eb0a89482d",
@@ -42439,7 +42439,7 @@
       "company_rating": 4.2,
       "ats": "Lever",
       "first_seen": "2026-11-14T12:45:08.572461",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "lev_spotify_5861816e-7ac4-4921-8e90-8e093707e27d",
