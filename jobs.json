@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "last_synced": "2026-11-15T13:12:50.214723",
-    "total_jobs": 2912,
+    "last_synced": "2026-11-15T22:18:48.721961",
+    "total_jobs": 2911,
     "total_companies_tracked": 30,
-    "new_jobs_count": 5
+    "new_jobs_count": 0
   },
   "jobs": [
     {
@@ -25384,7 +25384,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-15T13:12:50.214723",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_databricks_6779232002",
@@ -27322,21 +27322,6 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8345532",
-      "company": "Airbnb",
-      "title": "AirCover Specialist, Claims Experience",
-      "location": "Japan",
-      "department": "Community Support",
-      "url": "https://careers.airbnb.com/positions/8345532?gh_jid=8345532",
-      "updated_at": "2026-11-10T17:52:22-05:00",
-      "domain": "Consumer Internet & E-Commerce",
-      "origin": "Global Titan",
-      "company_rating": 4.2,
-      "ats": "Greenhouse",
-      "first_seen": "2026-11-02T14:18:57.514852",
-      "is_new": false
-    },
-    {
       "id": "gh_airbnb_8306554",
       "company": "Airbnb",
       "title": "AirCover Specialist, Claims Experience",
@@ -27349,6 +27334,21 @@
       "company_rating": 4.2,
       "ats": "Greenhouse",
       "first_seen": "2026-10-28T17:41:43.891500",
+      "is_new": false
+    },
+    {
+      "id": "gh_airbnb_8345532",
+      "company": "Airbnb",
+      "title": "AirCover Specialist, Claims Experience",
+      "location": "Japan",
+      "department": "Community Support",
+      "url": "https://careers.airbnb.com/positions/8345532?gh_jid=8345532",
+      "updated_at": "2026-11-10T17:52:22-05:00",
+      "domain": "Consumer Internet & E-Commerce",
+      "origin": "Global Titan",
+      "company_rating": 4.2,
+      "ats": "Greenhouse",
+      "first_seen": "2026-11-02T14:18:57.514852",
       "is_new": false
     },
     {
@@ -27757,21 +27757,6 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8326765",
-      "company": "Airbnb",
-      "title": "Lead, Quality",
-      "location": "Gurgaon, India",
-      "department": "Community Support",
-      "url": "https://careers.airbnb.com/positions/8326765?gh_jid=8326765",
-      "updated_at": "2026-11-13T06:54:50-05:00",
-      "domain": "Consumer Internet & E-Commerce",
-      "origin": "Global Titan",
-      "company_rating": 4.2,
-      "ats": "Greenhouse",
-      "first_seen": "2026-11-13T13:41:24.434327",
-      "is_new": false
-    },
-    {
       "id": "gh_airbnb_8383913",
       "company": "Airbnb",
       "title": "Lead, Quality, Elevated Support",
@@ -27832,12 +27817,12 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8303970",
+      "id": "gh_airbnb_8303971",
       "company": "Airbnb",
       "title": "Manager, Key Accounts - Hotels",
-      "location": "Berlin, Germany",
+      "location": "Dublin, Ireland",
       "department": "Sales",
-      "url": "https://careers.airbnb.com/positions/8303970?gh_jid=8303970",
+      "url": "https://careers.airbnb.com/positions/8303971?gh_jid=8303971",
       "updated_at": "2026-11-10T17:52:22-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
@@ -27907,12 +27892,12 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8303971",
+      "id": "gh_airbnb_8303970",
       "company": "Airbnb",
       "title": "Manager, Key Accounts - Hotels",
-      "location": "Dublin, Ireland",
+      "location": "Berlin, Germany",
       "department": "Sales",
-      "url": "https://careers.airbnb.com/positions/8303971?gh_jid=8303971",
+      "url": "https://careers.airbnb.com/positions/8303970?gh_jid=8303970",
       "updated_at": "2026-11-10T17:52:22-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
@@ -28012,36 +27997,6 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8260061",
-      "company": "Airbnb",
-      "title": "Market Manager",
-      "location": "Missouri, United States ",
-      "department": "Business Development",
-      "url": "https://careers.airbnb.com/positions/8260061?gh_jid=8260061",
-      "updated_at": "2026-11-10T17:52:22-05:00",
-      "domain": "Consumer Internet & E-Commerce",
-      "origin": "Global Titan",
-      "company_rating": 4.2,
-      "ats": "Greenhouse",
-      "first_seen": "2026-10-16T17:42:19.426555",
-      "is_new": false
-    },
-    {
-      "id": "gh_airbnb_8336893",
-      "company": "Airbnb",
-      "title": "Market Manager",
-      "location": "London, United Kingdom",
-      "department": "Business Development",
-      "url": "https://careers.airbnb.com/positions/8336893?gh_jid=8336893",
-      "updated_at": "2026-11-10T17:52:22-05:00",
-      "domain": "Consumer Internet & E-Commerce",
-      "origin": "Global Titan",
-      "company_rating": 4.2,
-      "ats": "Greenhouse",
-      "first_seen": "2026-10-30T17:29:55.742628",
-      "is_new": false
-    },
-    {
       "id": "gh_airbnb_8328748",
       "company": "Airbnb",
       "title": "Market Manager",
@@ -28069,6 +28024,36 @@
       "company_rating": 4.2,
       "ats": "Greenhouse",
       "first_seen": "2026-10-16T17:42:19.426555",
+      "is_new": false
+    },
+    {
+      "id": "gh_airbnb_8260061",
+      "company": "Airbnb",
+      "title": "Market Manager",
+      "location": "Missouri, United States ",
+      "department": "Business Development",
+      "url": "https://careers.airbnb.com/positions/8260061?gh_jid=8260061",
+      "updated_at": "2026-11-10T17:52:22-05:00",
+      "domain": "Consumer Internet & E-Commerce",
+      "origin": "Global Titan",
+      "company_rating": 4.2,
+      "ats": "Greenhouse",
+      "first_seen": "2026-10-16T17:42:19.426555",
+      "is_new": false
+    },
+    {
+      "id": "gh_airbnb_8336893",
+      "company": "Airbnb",
+      "title": "Market Manager",
+      "location": "London, United Kingdom",
+      "department": "Business Development",
+      "url": "https://careers.airbnb.com/positions/8336893?gh_jid=8336893",
+      "updated_at": "2026-11-10T17:52:22-05:00",
+      "domain": "Consumer Internet & E-Commerce",
+      "origin": "Global Titan",
+      "company_rating": 4.2,
+      "ats": "Greenhouse",
+      "first_seen": "2026-10-30T17:29:55.742628",
       "is_new": false
     },
     {
@@ -28522,21 +28507,6 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8358671",
-      "company": "Airbnb",
-      "title": "Regulatory Operations Lead",
-      "location": "Dublin, Ireland",
-      "department": "Business Operations/Analysis",
-      "url": "https://careers.airbnb.com/positions/8358671?gh_jid=8358671",
-      "updated_at": "2026-11-10T17:52:22-05:00",
-      "domain": "Consumer Internet & E-Commerce",
-      "origin": "Global Titan",
-      "company_rating": 4.2,
-      "ats": "Greenhouse",
-      "first_seen": "2026-11-06T22:34:04.924696",
-      "is_new": false
-    },
-    {
       "id": "gh_airbnb_7789528",
       "company": "Airbnb",
       "title": "Regulatory Operations Lead",
@@ -28549,6 +28519,21 @@
       "company_rating": 4.2,
       "ats": "Greenhouse",
       "first_seen": "2026-10-16T17:42:19.426555",
+      "is_new": false
+    },
+    {
+      "id": "gh_airbnb_8358671",
+      "company": "Airbnb",
+      "title": "Regulatory Operations Lead",
+      "location": "Dublin, Ireland",
+      "department": "Business Operations/Analysis",
+      "url": "https://careers.airbnb.com/positions/8358671?gh_jid=8358671",
+      "updated_at": "2026-11-10T17:52:22-05:00",
+      "domain": "Consumer Internet & E-Commerce",
+      "origin": "Global Titan",
+      "company_rating": 4.2,
+      "ats": "Greenhouse",
+      "first_seen": "2026-11-06T22:34:04.924696",
       "is_new": false
     },
     {
@@ -28747,12 +28732,12 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8318155",
+      "id": "gh_airbnb_8318152",
       "company": "Airbnb",
       "title": "Senior Compliance Lead, EMEA",
-      "location": "Brussels",
+      "location": "Dublin, Ireland",
       "department": "Business Operations/Analysis",
-      "url": "https://careers.airbnb.com/positions/8318155?gh_jid=8318155",
+      "url": "https://careers.airbnb.com/positions/8318152?gh_jid=8318152",
       "updated_at": "2026-11-10T17:52:22-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
@@ -28777,12 +28762,12 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8318152",
+      "id": "gh_airbnb_8318155",
       "company": "Airbnb",
       "title": "Senior Compliance Lead, EMEA",
-      "location": "Dublin, Ireland",
+      "location": "Brussels",
       "department": "Business Operations/Analysis",
-      "url": "https://careers.airbnb.com/positions/8318152?gh_jid=8318152",
+      "url": "https://careers.airbnb.com/positions/8318155?gh_jid=8318155",
       "updated_at": "2026-11-10T17:52:22-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
@@ -29047,6 +29032,21 @@
       "is_new": false
     },
     {
+      "id": "gh_airbnb_8383090",
+      "company": "Airbnb",
+      "title": "Senior Key Accounts Manager",
+      "location": "Amsterdam, Netherlands",
+      "department": "Sales",
+      "url": "https://careers.airbnb.com/positions/8383090?gh_jid=8383090",
+      "updated_at": "2026-11-12T10:32:59-05:00",
+      "domain": "Consumer Internet & E-Commerce",
+      "origin": "Global Titan",
+      "company_rating": 4.2,
+      "ats": "Greenhouse",
+      "first_seen": "2026-11-12T23:00:06.731862",
+      "is_new": false
+    },
+    {
       "id": "gh_airbnb_8383084",
       "company": "Airbnb",
       "title": "Senior Key Accounts Manager",
@@ -29062,13 +29062,13 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8383090",
+      "id": "gh_airbnb_8382875",
       "company": "Airbnb",
       "title": "Senior Key Accounts Manager",
-      "location": "Amsterdam, Netherlands",
+      "location": "Barcelona or Madrid, Spain",
       "department": "Sales",
-      "url": "https://careers.airbnb.com/positions/8383090?gh_jid=8383090",
-      "updated_at": "2026-11-12T10:32:59-05:00",
+      "url": "https://careers.airbnb.com/positions/8382875?gh_jid=8382875",
+      "updated_at": "2026-11-12T09:57:32-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
       "company_rating": 4.2,
@@ -29099,21 +29099,6 @@
       "department": "Sales",
       "url": "https://careers.airbnb.com/positions/8383070?gh_jid=8383070",
       "updated_at": "2026-11-12T10:32:55-05:00",
-      "domain": "Consumer Internet & E-Commerce",
-      "origin": "Global Titan",
-      "company_rating": 4.2,
-      "ats": "Greenhouse",
-      "first_seen": "2026-11-12T23:00:06.731862",
-      "is_new": false
-    },
-    {
-      "id": "gh_airbnb_8382875",
-      "company": "Airbnb",
-      "title": "Senior Key Accounts Manager",
-      "location": "Barcelona or Madrid, Spain",
-      "department": "Sales",
-      "url": "https://careers.airbnb.com/positions/8382875?gh_jid=8382875",
-      "updated_at": "2026-11-12T09:57:32-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
       "company_rating": 4.2,
@@ -29407,12 +29392,12 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8167204",
+      "id": "gh_airbnb_8141266",
       "company": "Airbnb",
       "title": "Senior Market Manager, Vietnamese Speaking (Bangkok Based)",
-      "location": "Vietnam",
+      "location": "Bangkok, Thailand",
       "department": "Sales & Partnerships",
-      "url": "https://careers.airbnb.com/positions/8167204?gh_jid=8167204",
+      "url": "https://careers.airbnb.com/positions/8141266?gh_jid=8141266",
       "updated_at": "2026-11-10T17:52:22-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
@@ -29422,12 +29407,12 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8141266",
+      "id": "gh_airbnb_8167204",
       "company": "Airbnb",
       "title": "Senior Market Manager, Vietnamese Speaking (Bangkok Based)",
-      "location": "Bangkok, Thailand",
+      "location": "Vietnam",
       "department": "Sales & Partnerships",
-      "url": "https://careers.airbnb.com/positions/8141266?gh_jid=8141266",
+      "url": "https://careers.airbnb.com/positions/8167204?gh_jid=8167204",
       "updated_at": "2026-11-10T17:52:22-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
@@ -29497,21 +29482,6 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8356141",
-      "company": "Airbnb",
-      "title": "Senior Program Manager, Design",
-      "location": "United States",
-      "department": "Design",
-      "url": "https://careers.airbnb.com/positions/8356141?gh_jid=8356141",
-      "updated_at": "2026-11-11T12:01:53-05:00",
-      "domain": "Consumer Internet & E-Commerce",
-      "origin": "Global Titan",
-      "company_rating": 4.2,
-      "ats": "Greenhouse",
-      "first_seen": "2026-11-11T23:53:01.536453",
-      "is_new": false
-    },
-    {
       "id": "gh_airbnb_8345089",
       "company": "Airbnb",
       "title": "Senior Program Manager, Design",
@@ -29524,6 +29494,21 @@
       "company_rating": 4.2,
       "ats": "Greenhouse",
       "first_seen": "2026-11-02T14:18:57.514852",
+      "is_new": false
+    },
+    {
+      "id": "gh_airbnb_8356141",
+      "company": "Airbnb",
+      "title": "Senior Program Manager, Design",
+      "location": "United States",
+      "department": "Design",
+      "url": "https://careers.airbnb.com/positions/8356141?gh_jid=8356141",
+      "updated_at": "2026-11-11T12:01:53-05:00",
+      "domain": "Consumer Internet & E-Commerce",
+      "origin": "Global Titan",
+      "company_rating": 4.2,
+      "ats": "Greenhouse",
+      "first_seen": "2026-11-11T23:53:01.536453",
       "is_new": false
     },
     {
@@ -29542,13 +29527,13 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8377745",
+      "id": "gh_airbnb_8377478",
       "company": "Airbnb",
       "title": "Senior Recruiter, Commercial (12-Month Contract)",
-      "location": "Tokyo, Japan",
+      "location": "Sydney, Australia",
       "department": "Recruiting",
-      "url": "https://careers.airbnb.com/positions/8377745?gh_jid=8377745",
-      "updated_at": "2026-11-11T04:59:39-05:00",
+      "url": "https://careers.airbnb.com/positions/8377478?gh_jid=8377478",
+      "updated_at": "2026-11-11T03:53:56-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
       "company_rating": 4.2,
@@ -29557,13 +29542,13 @@
       "is_new": false
     },
     {
-      "id": "gh_airbnb_8377478",
+      "id": "gh_airbnb_8377745",
       "company": "Airbnb",
       "title": "Senior Recruiter, Commercial (12-Month Contract)",
-      "location": "Sydney, Australia",
+      "location": "Tokyo, Japan",
       "department": "Recruiting",
-      "url": "https://careers.airbnb.com/positions/8377478?gh_jid=8377478",
-      "updated_at": "2026-11-11T03:53:56-05:00",
+      "url": "https://careers.airbnb.com/positions/8377745?gh_jid=8377745",
+      "updated_at": "2026-11-11T04:59:39-05:00",
       "domain": "Consumer Internet & E-Commerce",
       "origin": "Global Titan",
       "company_rating": 4.2,
@@ -38809,7 +38794,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-15T13:12:50.214723",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_gitlab_8880999002",
@@ -38839,7 +38824,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-15T13:12:50.214723",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_gitlab_8931347002",
@@ -38869,7 +38854,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-15T13:12:50.214723",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_gitlab_8931337002",
@@ -40684,7 +40669,7 @@
       "company_rating": 4.4,
       "ats": "Greenhouse",
       "first_seen": "2026-11-15T13:12:50.214723",
-      "is_new": true
+      "is_new": false
     },
     {
       "id": "gh_gitlab_8725981002",
